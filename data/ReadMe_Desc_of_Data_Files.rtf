@@ -2,24 +2,29 @@
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww14140\viewh8660\viewkind0
+\margl1440\margr1440\vieww20960\viewh8660\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 \
+\f0\fs28 \cf0 \
 Ames_Housing_Price_Data - untouched CSV with housing data and features\
 \
 Ames_Real_Estate_Data - untouched CSV that was used to get location of houses.  It has other features but none seemed useful\
 \
-locations - CSV with PID, SalesPrice, Neighborhood, Prop_Addr, latitude, longitude, street_name,  and Neighborhood_st.\
+locations - CSV with PID, SalesPrice, Neighborhood, Prop_Addr, latitude, longitude, street_name,  and Neighborhood_st. THIS IS MISSING ROWS.  WILL LOOK AT ON MAR 4TH AND FIX\
 \
 housing_no_na - CSV created from Ames_Housing_Price.  This CSV has all missing values filled in and contains all the features with no additional features added and no outliers removed.\
 \
 housing_cleaned - created from housing_no_na.\
 	- Added TotalPorchSF column which is the sum of OpenPorchSF, EnclosedPorch, ScreenPorch, and   3SnPorch\
-	- Dropped columns "3SsnPorch", "PoolArea", "MiscFeature", "LowQualFinSF\'94,  'MiscVal\'92 due to no relationship with SalePrice and highly imbalanced distribution.  \
-	- For observations with a misc feature, the value of that feature was subtracted from the SalePrice before MiscVal column was dropped.   \
+\
 	- Added Age feature which is the age of house when sold\
 	- Added RemodAge feature which is the amount of years from the time it was remodeled until it was sold. \
+	- Added TotalSF which is the GrLivArea and TotalBsmtSf added together\
+	- Added Remodeled which is binary, 0 for if the house wasn\'92t remodeled and 1 if it was.\
+	- Added TotalPorchSF which is the OpenPorchSfF, EnclosedPorch, ScreenPorch and 3SsnPorch columns added together\
 	- Added TotalBath feature which is adding FullBath and BsmtFullBath.  Then adding HalfBath and BsmtHalfBath multiplied by.5 to account for it being half a bathroom\
-	 - added street_type which is the type of street such as circle or blvd\
-	- Dropped two outliers with GrLivArea over 4000SqFt. }
+	- Added MSSubClass_cat which is the MSSubClass column but converted to a categorical feature since it is a category.  I kept MSSubClass which should be removed before modeling\
+\
+	- Dropped two outliers with GrLivArea over 4000SqFt. \
+	- Dropped columns "3SsnPorch", "PoolArea", "MiscFeature", "LowQualFinSF\'94,  'MiscVal\'92 due to no relationship with SalePrice and highly imbalanced distribution.  \
+	- For observations with a misc feature, the value of that feature was subtracted from the SalePrice before MiscVal column was dropped.   }
