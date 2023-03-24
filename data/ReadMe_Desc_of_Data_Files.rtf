@@ -25,27 +25,35 @@ housing_no_na - CSV created from Ames_Housing_Price using preprocessing_JP Jupyt
 	- All missing values filled in and contains all the features with no additional features added and no outliers removed. \
 	- GarageYrBlt was changed to -1 where there is no garage\
 \
-housing_cleaned - created from housing_no_na and locations_csv in EDA and Housing_locations notebooks\
-	- Added TotalPorchSF column which is the sum of OpenPorchSF, EnclosedPorch, ScreenPorch, and   3SnPorch\
+housing_cleaned_old - created from housing_no_na and locations_csv in EDA and Housing_locations notebooks\
+	- Added OutdoorSF column which is the sum of OpenPorchSF, EnclosedPorch, ScreenPorch, 3SnPorch and WoodDeckSF\
 	- Added Age feature which is the age of house when sold\
 	- Added RemodAge feature which is the amount of years from the time it was remodeled until it was sold. \
 	- Added TotalSF which is the GrLivArea and TotalBsmtSf added together\
 	- Added Remodeled which is binary, 0 for if the house wasn\'92t remodeled and 1 if it was.\
 	- Added TotalPorchSF which is the OpenPorchSfF, EnclosedPorch, ScreenPorch and 3SsnPorch columns added together\
 	- Added TotalBath feature which is adding FullBath and BsmtFullBath.  Then adding HalfBath and BsmtHalfBath multiplied by.5 to account for it being half a bathroom\
-	- Added MSSubClass_cat which is the MSSubClass column but converted to a categorical feature since it is a category.  I kept MSSubClass which should be removed before modeling\
+	- Added MSSubClass_cat which is the MSSubClass column but converted to a categorical feature since it is a category and deleted MSSubClass \
 \
 	- Street_10_Quantiles - made 10 groups based on street house is on and 10 Quantiles of SalePrice (houses on the same street are usually sold around the same price)\
-	- Street_20_Quantiles, Street_30_Quantiles. Street_50_Quantiles- same as above but with different quantiles\
+	-  Removed 20 observations with no location data\
+\
 	- Steet_type is the type of the street such as Ave or St\
 	- Prop_Addr and Street_name added in case we want to look at outliers in the street grouping\
 \
 	- Dropped two outliers with GrLivArea over 4000SqFt. \
-	- Dropped columns "3SsnPorch", "PoolArea", "MiscFeature", "LowQualFinSF\'94,  'MiscVal\'92 due to no relationship with SalePrice and highly imbalanced distribution.  \
+	- Dropped columns  "PoolArea", "MiscFeature", "LowQualFinSF\'94,  'MiscVal\'92 due to no relationship with SalePrice and highly imbalanced distribution.  \
 	- For observations with a misc feature, the value of that feature was subtracted from the SalePrice before MiscVal column was dropped.   \
 	- Dropped 3 duplicates\
 \
+housing_cleaned - created from housing_cleaned_old because the data dropped below might still be needed later. \
+	- Removed 20 observations missing location data \
+	- Dropped   "Street_name", "PoolQC", "Prop_Addr", "Street_10_Quantiles", "Street_20_Quantiles", "Street_30_Quantiles", "Street_50_Quantiles",\
 \
+train_set and test_set - created in Creating_Test_Turn notebook\
+	- One observation in Landmark neighborhood was removed\
+ 	- Nominal columns converted to numeric\
+	-  Train_set and Test_set created stratified on neighborhood\
 \
 \
 \
