@@ -149,6 +149,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# folder that isn't to be tracked
+not_on_github/
+
+
 # pytype static type analyzer
 .pytype/
 
