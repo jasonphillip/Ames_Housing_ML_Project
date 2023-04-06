@@ -9,8 +9,10 @@ __pycache__/
 # DS_Store Apple File System
 **/.DS_Store
 
-# Google Slides
-.gslides
+# Powerpoint/googleslides
+*.gslides
+*.pptx
+
 
 # Distribution / packaging
 .Python
