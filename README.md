@@ -5,4 +5,4 @@ One of the top ways you can increase the value of your home is with a kitchen re
 
 Checkout our [blog post]()
 
-Checkout our [presentation](https://www.youtube.com/watch?v=3KiVQZ9vOIs&ab_channel=CourseCourse) 
+Checkout our [presentation](https://www.youtube.com/live/3KiVQZ9vOIs?feature=share) 
