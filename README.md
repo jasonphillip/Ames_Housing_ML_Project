@@ -7,3 +7,5 @@ One of the top ways you can increase the value of your home is with a kitchen re
 Checkout our <a href="" target="_blank">Blog Post</a>
 
 Checkout our <a href="https://www.youtube.com/live/3KiVQZ9vOIs?feature=share" target="_blank">Presentation</a>
+
+reduced observation set supplied by the NYCDSA, if you want to replicate our work please send us an email and we will send you the .csv
